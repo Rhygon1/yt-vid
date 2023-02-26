@@ -1,0 +1,43 @@
+:root {
+    background-color: rgb(26, 25, 25);
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+    width: 100%;
+}
+
+p{
+    margin-top: 10%;
+    text-align: center;
+    color: white;
+    font:bold;
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#text{
+    width: 80%;
+    height: 10%;
+    align-self: center;
+    font-size: small;
+    background-color: black;
+    border: none;
+    margin-top: 6%;
+    color: white;
+}
+
+#button{
+    background-color: black;
+    color: white;
+    width: 50%;
+    align-self: center;
+    margin-top: 20%;
+    border: none;
+    height: 6vh;
+}
