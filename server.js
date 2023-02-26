@@ -16,19 +16,18 @@ server.listen(port)
 app.post('/download', async (req, res) => {
     let ID = req.body.url.split('?v=')[1]
     if(ytdl.validateID(ID)){
-        ytdl(ID, {quality: '18'}).pipe(fs.createWriteStream('./public/'+ID+'.mp4'))
+        ytdl(ID, {quality: '18'}).pipe(fs.createWriteStream('./vids/'+ID+'.mp4'))
         res.send('/'+ID+'.mp4')
-        fs.readdir('./public', (err, files) => {
-            files.forEach(file => {
-                console.log(file);
-            });
-        });
     } else {
         res.send('error')
     }
 })
 
+app.get('/:url', (req, res) => {
+    res.download('./vids/'+req.params.url)
+})
 
 app.delete('/:url', (req, res) => {
-    fs.unlink('./public/'+req.params.url, () => {})
+    fs.unlink('./vids/'+req.params.url, () => {})
+    res.send('ok')
 })
