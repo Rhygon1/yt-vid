@@ -18,6 +18,11 @@ app.post('/download', async (req, res) => {
     if(ytdl.validateID(ID)){
         ytdl(ID, {quality: '18'}).pipe(fs.createWriteStream('./public/'+ID+'.mp4'))
         res.send('/'+ID+'.mp4')
+        fs.readdir('./public', (err, files) => {
+            files.forEach(file => {
+                console.log(file);
+            });
+        });
     } else {
         res.send('error')
     }

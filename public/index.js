@@ -18,5 +18,5 @@ button.addEventListener('click', async () => {
         fetch(link)
         loading.style.display = 'None'
         fetch(link, {method: 'DELETE'})
-    }, 3000)
+    }, 7000)
 })
